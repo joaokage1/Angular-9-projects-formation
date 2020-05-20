@@ -29,7 +29,7 @@ export class ModalCotacaoComponent {
 	  	}
 	  	
 	  	return (this.conversao.valor * 
-	  		this.conversaoResponse.rates[this.conversao.moedaPara])
+	  		this.conversaoResponse[this.conversao.moedaDe]["bid"])
 	  			.toFixed(2);
 	}
 

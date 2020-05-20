@@ -12,8 +12,8 @@ import {
 export class ConversorService {
 
   //private readonly BASE_URL = "http://api.fixer.io/latest";
-  private readonly BASE_URL = "http://data.fixer.io/api/latest?access_key=eba7130a5b2d720ce43eb5fcddd47cc3";
-
+  private readonly BASE_URL = "https://economia.awesomeapi.com.br/json/all";
+  
   constructor(private http: HttpClient) {}
 
   /**
@@ -23,9 +23,8 @@ export class ConversorService {
    * @return Observable<ConversaoResponse>
    */
   converter(conversao: Conversao): Observable<any> {
-  	let params = `&base=${conversao.moedaDe}&symbols=${conversao.moedaPara}`;
   	return this.http
-      .get(this.BASE_URL + params);
+      .get(this.BASE_URL);
       //.map(response => response.json() as ConversaoResponse)
       //.catch(error => Observable.throw(error));
   }
@@ -43,7 +42,7 @@ export class ConversorService {
   		return 0;
   	}
 
-  	return conversaoResponse.rates[conversao.moedaPara];
+  	return conversaoResponse[conversao.moedaDe]["bid"];
   }
 
   /**
@@ -59,7 +58,7 @@ export class ConversorService {
   		return '0';
   	}
 
-  	return (1 / conversaoResponse.rates[conversao.moedaPara])
+  	return (1 / conversaoResponse[conversao.moedaDe]["bid"])
   		.toFixed(4);
   }
 
@@ -74,7 +73,7 @@ export class ConversorService {
       return '';
     }
 
-    return conversaoResponse.date;
+    return conversaoResponse["EUR"]["create_date"];
   }
 
 }
