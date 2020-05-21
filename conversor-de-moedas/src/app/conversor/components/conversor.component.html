@@ -37,12 +37,12 @@
 			[(ngModel)]="conversao.moedaPara"
 			required>
 			<option 
-				*ngFor="let moeda of moedas" 
-				[value]="moeda.sigla">
-				{{ moeda.sigla }} - {{ moeda.descricao }}
+				value="BRL">
+				BRL - REAL BRASILEIRO
 			</option>
 		</select>
-		<input 
+		<input
+			id="btnSubmit" 
 			type="submit" 
 			value="Converter"
 			class="btn btn-success"

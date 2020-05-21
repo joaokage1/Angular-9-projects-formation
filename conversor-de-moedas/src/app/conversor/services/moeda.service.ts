@@ -24,8 +24,7 @@ export class MoedaService {
 	{ "sigla": "LTC", "descricao": "Litecoin" },
 	{ "sigla": "USD", "descricao": "Dólar Comercial" },
 	{ "sigla": "USDT", "descricao": "Dólar Turismo" },
-	{ "sigla": "XRP", "descricao": "Ripple" },
-	{ "sigla": "BRL", "descricao": "Real" }
+	{ "sigla": "XRP", "descricao": "Ripple" }
   ];
 
   listarTodas(): Moeda[] {
