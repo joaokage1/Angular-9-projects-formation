@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-/*import { DashboardRoutes } from './dashboard';
+import { DashboardRoutes } from './dashboard';
 import { CalculadoraRoutes } from './calculadora';
 import { ConversorRoutes } from './conversor';
 import { TarefaRoutes } from './tarefas';
-import { JogoDaVelhaRoutes } from './jogo-da-velha';*/
+import { JogoDaVelhaRoutes } from './jogo-da-velha';
 
 export const routes: Routes = [
 	{ 
@@ -13,11 +13,11 @@ export const routes: Routes = [
 		redirectTo: '/dashboard', 
 		pathMatch: 'full' 
 	},
-	/*...DashboardRoutes,
+	...DashboardRoutes,
 	...CalculadoraRoutes,
 	...ConversorRoutes,
 	...TarefaRoutes,
-	...JogoDaVelhaRoutes*/
+	...JogoDaVelhaRoutes
 ];
 
 @NgModule({

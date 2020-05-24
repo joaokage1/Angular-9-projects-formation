@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ModalCotacaoComponent } from './modal-cotacao.component';
-import { DataBrPipe } from '../pipes';
 import { ConversorService } from '../services';
 
 describe('ModalCotacaoComponent', () => {
@@ -12,8 +11,7 @@ describe('ModalCotacaoComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        ModalCotacaoComponent,
-        DataBrPipe
+        ModalCotacaoComponent
       ],
       providers: [
         ConversorService
